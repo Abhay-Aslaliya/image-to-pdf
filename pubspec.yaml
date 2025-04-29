@@ -1,0 +1,30 @@
+name: image_to_pdf
+description: A new Flutter project.
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  image_picker: ^0.8.4+4
+  pdf: ^3.6.0
+  image: ^3.0.2
+  path_provider: ^2.1.5
+  permission_handler: ^12.0.0+1
+  device_info_plus: ^11.4.0
+  get: ^4.7.2
+  file_saver: ^0.2.14
+  flutter_image_compress: ^2.4.0
+  reorderable_grid_view: ^2.2.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
