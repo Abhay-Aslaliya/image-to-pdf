@@ -12,7 +12,6 @@ import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
-// import 'package:pdf_compressor/pdf_compressor.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class ImageController extends GetxController {
@@ -51,6 +50,15 @@ class ImageController extends GetxController {
     isLoading.value = false;
   }
 
+  Future<Uint8List> compressImage(File imageFile, {int maxWidth = 1080}) async {
+    final raw = await imageFile.readAsBytes();
+    img.Image? image = img.decodeImage(raw);
+    if (image == null) return raw;
+
+    final resized = img.copyResize(image, width: maxWidth);
+    return Uint8List.fromList(img.encodeJpg(resized, quality: 70));
+  }
+
   Future<void> createPdf(BuildContext context) async {
     if (images.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -81,13 +89,17 @@ class ImageController extends GetxController {
       }
 
       final image = pw.MemoryImage(
-          Uint8List.fromList(img.encodeJpg(originalImage!)),
-          dpi: 100);
+        true
+            ? await compressImage(File(imageFile.path))
+            : Uint8List.fromList(img.encodeJpg(originalImage!)),
+      );
 
       pdf.addPage(pw.Page(
         build: (pw.Context context) {
           return pw.Center(
-            child: pw.Image(image),
+            child: pw.Image(
+              image,
+            ),
           );
         },
         pageFormat: PdfPageFormat.a4,
@@ -193,12 +205,12 @@ class ImageController extends GetxController {
 
   static Future<Uint8List?> compress(File image) async {
     final result = await FlutterImageCompress.compressWithFile(
-      image.absolute.path,
-      minWidth: 1024,
-      minHeight: 768,
-      quality: 50,
-      format: CompressFormat.jpeg,
-    );
+        image.absolute.path,
+        minWidth: 1024,
+        minHeight: 768,
+        quality: 80,
+        format: CompressFormat.jpeg,
+        keepExif: false);
     return result;
   }
 

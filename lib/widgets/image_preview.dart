@@ -70,6 +70,6 @@ class ImagePreview extends StatelessWidget {
               },
             ),
           )
-        : const Text('No images selected'));
+        : const Expanded(child: const Text('No images selected')));
   }
 }

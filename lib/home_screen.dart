@@ -46,20 +46,20 @@ class MyHomePage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      IconButton(
-                        onPressed: () => imageController.createPdf(context),
-                        icon: Icon(Icons.picture_as_pdf),
-                        style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 15),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                      ),
                     ],
                   ),
                   ImagePreview(),
+                  IconButton(
+                    onPressed: () => imageController.createPdf(context),
+                    icon: Icon(Icons.picture_as_pdf),
+                    style: ElevatedButton.styleFrom(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                  ),
                 ],
               )),
       ),
