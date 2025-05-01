@@ -5,10 +5,10 @@ packages:
     dependency: transitive
     description:
       name: archive
-      sha256: cb6a278ef2dbb298455e1a713bda08524a175630ec643a242c399c932a0a1f7d
+      sha256: "2fde1607386ab523f7a36bb3e7edb43bd58e6edaf2ffb29d8a6d578b297fdbbd"
       url: "https://pub.dev"
     source: hosted
-    version: "3.6.1"
+    version: "4.0.7"
   async:
     dependency: transitive
     description:
@@ -25,6 +25,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.9"
+  bidi:
+    dependency: transitive
+    description:
+      name: bidi
+      sha256: "77f475165e94b261745cf1032c751e2032b8ed92ccb2bf5716036db79320637d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.13"
   boolean_selector:
     dependency: transitive
     description:
@@ -57,6 +65,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.19.1"
+  crop_your_image:
+    dependency: "direct main"
+    description:
+      name: crop_your_image
+      sha256: "9ae3b33042de5bda5321fc48aad41054c196bf2cc28350cd30cb8a85c1a7b1bd"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.0"
   cross_file:
     dependency: transitive
     description:
@@ -284,10 +300,10 @@ packages:
     dependency: "direct main"
     description:
       name: image
-      sha256: "8e9d133755c3e84c73288363e6343157c383a0c6c56fc51afcc5d4d7180306d6"
+      sha256: "4e973fcf4caae1a4be2fa0a13157aa38a8f9cb049db6529aa00b4d71abc4d928"
       url: "https://pub.dev"
     source: hosted
-    version: "3.3.0"
+    version: "4.5.4"
   image_picker:
     dependency: "direct main"
     description:
@@ -484,10 +500,10 @@ packages:
     dependency: "direct main"
     description:
       name: pdf
-      sha256: "10659b915e65832b106f6d1d213e09b789cc1f24bf282ee911e49db35b96be4d"
+      sha256: "28eacad99bffcce2e05bba24e50153890ad0255294f4dd78a17075a2ba5c8416"
       url: "https://pub.dev"
     source: hosted
-    version: "3.8.4"
+    version: "3.11.3"
   permission_handler:
     dependency: "direct main"
     description:
@@ -560,6 +576,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.8"
+  posix:
+    dependency: transitive
+    description:
+      name: posix
+      sha256: f0d7856b6ca1887cfa6d1d394056a296ae33489db914e365e2044fdada449e62
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.0.2"
   qr:
     dependency: transitive
     description:
@@ -568,14 +592,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.2"
-  reorderable_grid_view:
-    dependency: "direct main"
-    description:
-      name: reorderable_grid_view
-      sha256: e36c6229a97105a10c79e15ab4b9b14ee9f6c488574ff2be9e858c82af47cda6
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.2.8"
   sky_engine:
     dependency: transitive
     description: flutter

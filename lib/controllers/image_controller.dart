@@ -30,6 +30,11 @@ class ImageController extends GetxController {
     images.insert(newIndex, image);
   }
 
+  void updateImage(int index, String newPath) {
+    images[index] = XFile(newPath);
+    // images.refresh();
+  }
+
   Future<void> pickImages() async {
     isLoading.value = true;
     final ImagePicker _picker = ImagePicker();

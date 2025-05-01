@@ -7,6 +7,7 @@
     <application
         android:label="image_to_pdf"
         android:name="${applicationName}"
+        android:enableOnBackInvokedCallback="true"
         android:requestLegacyExternalStorage="true"
         android:icon="@mipmap/ic_launcher">
         <activity
