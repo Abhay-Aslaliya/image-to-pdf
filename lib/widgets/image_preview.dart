@@ -14,14 +14,14 @@ class ImagePreview extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(() => imageController.images.isNotEmpty
         ? Expanded(
-            child: GridView.builder(
+            child: ListView.builder(
               itemCount: imageController.images.length,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3, // Number of columns
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-                childAspectRatio: 1, // Width to height ratio
-              ),
+              // gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              //   crossAxisCount: 3, // Number of columns
+              //   crossAxisSpacing: 10,
+              //   mainAxisSpacing: 10,
+              //   childAspectRatio: 1, // Width to height ratio
+              // ),
               itemBuilder: (context, index) {
                 return Stack(
                   children: [
@@ -46,7 +46,8 @@ class ImagePreview extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => CropImageScreen(
-                                    imagePath: imageController.images[index].path,
+                                    imagePath:
+                                        imageController.images[index].path,
                                     index: index,
                                   ),
                                 ),
